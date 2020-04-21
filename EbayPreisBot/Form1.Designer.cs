@@ -288,6 +288,7 @@
             this.MinimumSize = new System.Drawing.Size(833, 504);
             this.Name = "Form1";
             this.Text = "ebay-Scouter";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceovertimeBindingSource)).EndInit();

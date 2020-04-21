@@ -15,8 +15,11 @@ namespace EbayPreisBot
     {
         static Preisbekommen preisbekommen = new Preisbekommen();
         public DataTable dataTable;
-        
-        public Form1()
+
+        int currentID;
+        string currentKey;
+
+        public Form1(int id, string key)
         {
             InitializeComponent();
             search.DataSource = priceovertimeTableAdapter.GetData();
@@ -24,6 +27,9 @@ namespace EbayPreisBot
             search.AutoCompleteMode = AutoCompleteMode.Suggest;
             search.AutoCompleteSource = AutoCompleteSource.ListItems;
             search.SelectedIndex = -1;
+
+            currentID = id;
+            currentKey = key;
         }
 
         private void search_TextChanged(object sender, EventArgs e)
@@ -69,6 +75,11 @@ namespace EbayPreisBot
             priceSearch.Enabled = false;
             listBox1.Items.Clear();
             priceSearch.Text = null;
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            esCuserTableAdapter1.Update(currentID, currentKey, 0, currentID, currentKey, 1);
         }
 
         public void AddProgress(int max)
