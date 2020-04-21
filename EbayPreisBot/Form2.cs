@@ -26,23 +26,29 @@ namespace EbayPreisBot
         {
             int correctID = -1;
 
-            if (userIDinput.Text == esCuserTableAdapter1.GetData().Rows[Convert.ToInt32(userIDinput.Text)].Field<int>("Id").ToString())
+            try
             {
-                correctID = Convert.ToInt32(userIDinput.Text);
+                if (userIDinput.Text == esCuserTableAdapter1.GetData().Rows[Convert.ToInt32(userIDinput.Text)].Field<int>("Id").ToString())
+                {
+                    correctID = Convert.ToInt32(userIDinput.Text);
+                }
             }
-            else
+            catch (Exception)
             {
                 //ID not found
+                MessageBox.Show("UserID not found.", "eBay-Scouter", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (keyInput.Text != esCuserTableAdapter1.GetData().Rows[correctID].Field<string>("Key"))
             {
+                MessageBox.Show("Key not found.", "eBay-Scouter", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (esCuserTableAdapter1.GetData().Rows[correctID].Field<Int16>("Isused") == 1)
             {
+                MessageBox.Show("User already logged in.", "eBay-Scouter", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
