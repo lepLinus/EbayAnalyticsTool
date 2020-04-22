@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EbayPreisBot
-{
+{ 
     public partial class Form2 : Form
     {
         int correctID = -1;
@@ -22,18 +22,23 @@ namespace EbayPreisBot
         private void Form2_Load(object sender, EventArgs e)
         {
             esCuserTableAdapter1.Fill(k117886_ebayscoutDataSet1.ESCuser);
+
+            userIDinput.Text = null;
+            keyInput.Text = null;
+            correctID = -1;
         }
+
         private void Form2_Shown(object sender, EventArgs e)
         {
             try
             {
-                if (Properties.Settings.Default.UserID != 0)
+                if (Properties.Settings.Default.UserID > -1)
                 {
                     userIDinput.Text = Properties.Settings.Default.UserID.ToString();
                     keyInput.Text = Properties.Settings.Default.Key;
                     correctID = Properties.Settings.Default.UserID;
+                    Login();
                 }
-                Login();
             }
             catch (Exception E)
             {

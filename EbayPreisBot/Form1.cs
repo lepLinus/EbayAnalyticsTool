@@ -81,6 +81,7 @@ namespace EbayPreisBot
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             esCuserTableAdapter1.Update(currentID, currentKey, 0, currentID, currentKey, 1);
+            Application.Exit();
         }
 
         public void AddProgress(int max)

@@ -18,10 +18,10 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">User Id=k117886_admin;Password=!WASSer://;Host=91.204.46.26;Database=k117886_ebayscout;Persist Security Info=True</Value>
     </Setting>
-    <Setting Name="UserID" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+    <Setting Name="UserID" Roaming="true" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">-1</Value>
     </Setting>
-    <Setting Name="Key" Type="System.String" Scope="User">
+    <Setting Name="Key" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>
