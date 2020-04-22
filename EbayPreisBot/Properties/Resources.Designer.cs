@@ -59,5 +59,15 @@ namespace EbayPreisBot.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_2935373_640 {
+            get {
+                object obj = ResourceManager.GetObject("user-2935373_640", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

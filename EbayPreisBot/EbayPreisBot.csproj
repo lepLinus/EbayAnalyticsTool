@@ -205,6 +205,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ebay-scouter-logo.ico" />
+    <None Include="Graphics\Icons\user-2935373_640.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

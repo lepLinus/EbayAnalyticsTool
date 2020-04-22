@@ -60,6 +60,7 @@ namespace EbayPreisBot
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             Run.Enabled = false;
             priceovertimeTableAdapter.Fill(k117886_ebayscoutDataSet.priceovertime);
 

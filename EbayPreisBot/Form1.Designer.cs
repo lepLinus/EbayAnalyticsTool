@@ -55,6 +55,7 @@
             this.k117886_ebayscoutDataSet = new EbayPreisBot.k117886_ebayscoutDataSet();
             this.priceovertimeTableAdapter = new EbayPreisBot.k117886_ebayscoutDataSetTableAdapters.priceovertimeTableAdapter();
             this.esCuserTableAdapter1 = new EbayPreisBot.k117886_ebayscoutDataSetTableAdapters.ESCuserTableAdapter();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceovertimeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.k117886_ebayscoutDataSet)).BeginInit();
@@ -62,36 +63,53 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 415);
+            this.progressBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            this.progressBar1.Location = new System.Drawing.Point(18, 638);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(775, 23);
+            this.progressBar1.Size = new System.Drawing.Size(1162, 35);
             this.progressBar1.TabIndex = 0;
             this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // Run
             // 
-            this.Run.Location = new System.Drawing.Point(701, 391);
+            this.Run.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(237)))));
+            this.Run.FlatAppearance.BorderSize = 0;
+            this.Run.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Run.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Run.ForeColor = System.Drawing.Color.White;
+            this.Run.Location = new System.Drawing.Point(1051, 594);
+            this.Run.Margin = new System.Windows.Forms.Padding(0);
             this.Run.Name = "Run";
-            this.Run.Size = new System.Drawing.Size(86, 22);
+            this.Run.Size = new System.Drawing.Size(129, 39);
             this.Run.TabIndex = 1;
             this.Run.Text = "Run";
-            this.Run.UseVisualStyleBackColor = true;
+            this.Run.UseVisualStyleBackColor = false;
             this.Run.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(572, 391);
+            this.comboBox1.Location = new System.Drawing.Point(855, 598);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(124, 21);
+            this.comboBox1.Size = new System.Drawing.Size(184, 29);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(12, 368);
+            this.label1.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(18, 566);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(775, 16);
+            this.label1.Size = new System.Drawing.Size(1162, 25);
             this.label1.TabIndex = 5;
             this.label1.Text = "To run the programm please type in your item name, select your browser and click " +
     "run.";
@@ -100,50 +118,91 @@
             // 
             // avg
             // 
-            this.avg.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.avg.Location = new System.Drawing.Point(208, 293);
+            this.avg.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.avg.ForeColor = System.Drawing.Color.White;
+            this.avg.Location = new System.Drawing.Point(312, 451);
+            this.avg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.avg.Name = "avg";
-            this.avg.Size = new System.Drawing.Size(189, 75);
+            this.avg.Size = new System.Drawing.Size(284, 115);
             this.avg.TabIndex = 7;
             this.avg.Text = "N/A";
             this.avg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // min
             // 
-            this.min.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.min.Location = new System.Drawing.Point(403, 293);
+            this.min.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.min.ForeColor = System.Drawing.Color.White;
+            this.min.Location = new System.Drawing.Point(604, 451);
+            this.min.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.min.Name = "min";
-            this.min.Size = new System.Drawing.Size(189, 75);
+            this.min.Size = new System.Drawing.Size(284, 115);
             this.min.TabIndex = 8;
             this.min.Text = "N/A";
             this.min.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // max
             // 
-            this.max.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.max.Location = new System.Drawing.Point(598, 293);
+            this.max.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.max.ForeColor = System.Drawing.Color.White;
+            this.max.Location = new System.Drawing.Point(897, 451);
+            this.max.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.max.Name = "max";
-            this.max.Size = new System.Drawing.Size(189, 75);
+            this.max.Size = new System.Drawing.Size(284, 115);
             this.max.TabIndex = 9;
             this.max.Text = "N/A";
             this.max.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // listBox1
             // 
+            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox1.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.ForeColor = System.Drawing.Color.White;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 38);
+            this.listBox1.ItemHeight = 18;
+            this.listBox1.Location = new System.Drawing.Point(18, 58);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(385, 225);
+            this.listBox1.Size = new System.Drawing.Size(576, 342);
             this.listBox1.TabIndex = 10;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // chart1
             // 
+            this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            this.chart1.BackSecondaryColor = System.Drawing.Color.White;
+            this.chart1.BorderSkin.BackColor = System.Drawing.Color.White;
+            this.chart1.BorderSkin.BorderColor = System.Drawing.Color.White;
+            this.chart1.BorderSkin.BorderWidth = 0;
+            chartArea1.AxisX.InterlacedColor = System.Drawing.Color.White;
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.MinorGrid.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.MinorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX.ScaleBreakStyle.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX2.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisX2.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.White;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY.MinorGrid.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY.MinorTickMark.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY2.LineColor = System.Drawing.Color.White;
+            chartArea1.AxisY2.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            chartArea1.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            chartArea1.BorderColor = System.Drawing.Color.White;
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
+            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            legend1.ForeColor = System.Drawing.Color.White;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(410, 12);
+            this.chart1.Location = new System.Drawing.Point(615, 18);
+            this.chart1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chart1.Name = "chart1";
             series1.BorderWidth = 3;
             series1.ChartArea = "ChartArea1";
@@ -166,55 +225,69 @@
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
             this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(377, 251);
+            this.chart1.Size = new System.Drawing.Size(566, 386);
             this.chart1.TabIndex = 11;
             this.chart1.Text = "chart1";
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // priceSearch
             // 
-            this.priceSearch.Location = new System.Drawing.Point(12, 12);
+            this.priceSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            this.priceSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.priceSearch.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceSearch.ForeColor = System.Drawing.Color.White;
+            this.priceSearch.Location = new System.Drawing.Point(18, 18);
+            this.priceSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.priceSearch.Name = "priceSearch";
-            this.priceSearch.Size = new System.Drawing.Size(385, 20);
+            this.priceSearch.Size = new System.Drawing.Size(568, 19);
             this.priceSearch.TabIndex = 12;
+            this.priceSearch.Text = "Search for price";
             this.priceSearch.TextChanged += new System.EventHandler(this.priceSearch_TextChanged);
             // 
             // sumtxt
             // 
-            this.sumtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.sumtxt.Location = new System.Drawing.Point(12, 270);
+            this.sumtxt.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sumtxt.ForeColor = System.Drawing.Color.White;
+            this.sumtxt.Location = new System.Drawing.Point(18, 415);
+            this.sumtxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sumtxt.Name = "sumtxt";
-            this.sumtxt.Size = new System.Drawing.Size(193, 23);
+            this.sumtxt.Size = new System.Drawing.Size(290, 35);
             this.sumtxt.TabIndex = 13;
             this.sumtxt.Text = "SUM:";
             this.sumtxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // avgtxt
             // 
-            this.avgtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.avgtxt.Location = new System.Drawing.Point(211, 270);
+            this.avgtxt.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.avgtxt.ForeColor = System.Drawing.Color.White;
+            this.avgtxt.Location = new System.Drawing.Point(316, 415);
+            this.avgtxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.avgtxt.Name = "avgtxt";
-            this.avgtxt.Size = new System.Drawing.Size(186, 23);
+            this.avgtxt.Size = new System.Drawing.Size(279, 35);
             this.avgtxt.TabIndex = 14;
             this.avgtxt.Text = "AVG:";
             this.avgtxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // mintxt
             // 
-            this.mintxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.mintxt.Location = new System.Drawing.Point(403, 270);
+            this.mintxt.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mintxt.ForeColor = System.Drawing.Color.White;
+            this.mintxt.Location = new System.Drawing.Point(604, 415);
+            this.mintxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.mintxt.Name = "mintxt";
-            this.mintxt.Size = new System.Drawing.Size(189, 23);
+            this.mintxt.Size = new System.Drawing.Size(284, 35);
             this.mintxt.TabIndex = 15;
             this.mintxt.Text = "MIN:";
             this.mintxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // maxtxt
             // 
-            this.maxtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.maxtxt.Location = new System.Drawing.Point(598, 270);
+            this.maxtxt.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maxtxt.ForeColor = System.Drawing.Color.White;
+            this.maxtxt.Location = new System.Drawing.Point(897, 415);
+            this.maxtxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.maxtxt.Name = "maxtxt";
-            this.maxtxt.Size = new System.Drawing.Size(189, 23);
+            this.maxtxt.Size = new System.Drawing.Size(284, 35);
             this.maxtxt.TabIndex = 16;
             this.maxtxt.Text = "MAX:";
             this.maxtxt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -222,10 +295,12 @@
             // sum
             // 
             this.sum.Cursor = System.Windows.Forms.Cursors.No;
-            this.sum.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.sum.Location = new System.Drawing.Point(12, 293);
+            this.sum.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sum.ForeColor = System.Drawing.Color.White;
+            this.sum.Location = new System.Drawing.Point(18, 451);
+            this.sum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sum.Name = "sum";
-            this.sum.Size = new System.Drawing.Size(193, 75);
+            this.sum.Size = new System.Drawing.Size(290, 115);
             this.sum.TabIndex = 6;
             this.sum.Text = "N/A";
             this.sum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -237,14 +312,19 @@
             // 
             // search
             // 
+            this.search.BackColor = System.Drawing.Color.White;
+            this.search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.search.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
             this.search.FormattingEnabled = true;
             this.search.IntegralHeight = false;
-            this.search.Location = new System.Drawing.Point(12, 391);
-            this.search.Margin = new System.Windows.Forms.Padding(2);
+            this.search.Location = new System.Drawing.Point(18, 598);
+            this.search.Margin = new System.Windows.Forms.Padding(0);
             this.search.MaxDropDownItems = 3;
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(547, 21);
+            this.search.Size = new System.Drawing.Size(818, 29);
             this.search.TabIndex = 17;
+            this.search.Text = "Search";
             this.search.SelectedIndexChanged += new System.EventHandler(this.search_SelectedIndexChanged);
             this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
             // 
@@ -262,11 +342,21 @@
             // 
             this.esCuserTableAdapter1.ClearBeforeFill = true;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(18, 40);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(568, 5);
+            this.flowLayoutPanel1.TabIndex = 18;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(817, 465);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            this.ClientSize = new System.Drawing.Size(1216, 689);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.search);
             this.Controls.Add(this.maxtxt);
             this.Controls.Add(this.mintxt);
@@ -283,10 +373,13 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Run);
             this.Controls.Add(this.progressBar1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(833, 504);
-            this.MinimumSize = new System.Drawing.Size(833, 504);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximumSize = new System.Drawing.Size(1238, 745);
+            this.MinimumSize = new System.Drawing.Size(1238, 745);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ebay-Scouter";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -320,6 +413,7 @@
         protected System.Windows.Forms.BindingSource priceovertimeBindingSource;
         protected k117886_ebayscoutDataSetTableAdapters.priceovertimeTableAdapter priceovertimeTableAdapter;
         private k117886_ebayscoutDataSetTableAdapters.ESCuserTableAdapter esCuserTableAdapter1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 

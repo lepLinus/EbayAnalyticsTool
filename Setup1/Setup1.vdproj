@@ -106,31 +106,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_743C923A20CEBC3A410AA81AA9C8FFD2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_71B0218C139540366A1AE8ED4948C2E0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9210B5B2FAA9580A8AAFCBA083EB980B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E45F7C8D5C5C88167BD982E2EF6DBE55"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AB99BF6F47E9E01E89BF4DB809B73A6B"
+        "OwnerKey" = "8:_02A9E0ED7879700A5B74456032E54C19"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -142,7 +118,31 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_02A9E0ED7879700A5B74456032E54C19"
+        "OwnerKey" = "8:_AB99BF6F47E9E01E89BF4DB809B73A6B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_E45F7C8D5C5C88167BD982E2EF6DBE55"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9210B5B2FAA9580A8AAFCBA083EB980B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_71B0218C139540366A1AE8ED4948C2E0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_743C923A20CEBC3A410AA81AA9C8FFD2"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -170,6 +170,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
         "Release"
@@ -194,6 +202,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -231,11 +247,6 @@
             "AssemblyAsmDisplayName" = "8:Devart.Data, Version=5.0.2404.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_02A9E0ED7879700A5B74456032E54C19"
-                    {
-                    "Name" = "8:Devart.Data.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Devart.Data.dll"
             "TargetName" = "8:"
@@ -282,11 +293,6 @@
             "AssemblyAsmDisplayName" = "8:Devart.Data.MySql, Version=8.17.1612.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_5837CF9705517A3A6AF7425A80B5F0B6"
-                    {
-                    "Name" = "8:Devart.Data.MySql.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Devart.Data.MySql.dll"
             "TargetName" = "8:"
@@ -313,11 +319,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_71B0218C139540366A1AE8ED4948C2E0"
-                    {
-                    "Name" = "8:Microsoft.WindowsAPICodePack.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.WindowsAPICodePack.dll"
             "TargetName" = "8:"
@@ -344,11 +345,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_743C923A20CEBC3A410AA81AA9C8FFD2"
-                    {
-                    "Name" = "8:Microsoft.WindowsAPICodePack.Shell.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.WindowsAPICodePack.Shell.dll"
             "TargetName" = "8:"
@@ -375,11 +371,6 @@
             "AssemblyAsmDisplayName" = "8:WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_9210B5B2FAA9580A8AAFCBA083EB980B"
-                    {
-                    "Name" = "8:WebDriver.Support.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:WebDriver.Support.dll"
             "TargetName" = "8:"
@@ -406,11 +397,6 @@
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_AB99BF6F47E9E01E89BF4DB809B73A6B"
-                    {
-                    "Name" = "8:System.Net.Http.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
             "TargetName" = "8:"
@@ -477,11 +463,6 @@
             "AssemblyAsmDisplayName" = "8:WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_E45F7C8D5C5C88167BD982E2EF6DBE55"
-                    {
-                    "Name" = "8:WebDriver.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:WebDriver.dll"
             "TargetName" = "8:"
@@ -1153,7 +1134,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_591AEC81663B40E48F35E17338437995"
             {
-            "SourcePath" = "8:..\\EbayPreisBot\\obj\\Debug\\EbayPreisBot.exe"
+            "SourcePath" = "8:..\\EbayPreisBot\\obj\\Debug\\eBay-Scouter.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_DDB8C3A2721742BA8212145E2DC7D177"
