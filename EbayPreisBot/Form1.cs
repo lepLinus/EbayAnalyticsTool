@@ -18,6 +18,11 @@ namespace EbayPreisBot
 
         int currentID;
         string currentKey;
+        public List<double> avglist = new List<double>();
+        public List<double> minlist = new List<double>();
+        public List<double> maxlist = new List<double>();
+        public List<string> datelist = new List<string>();
+
 
         public Form1(int id, string key)
         {
@@ -178,6 +183,10 @@ namespace EbayPreisBot
                                 chart1.Series["AVG"].Points.AddXY(priceovertimeTableAdapter.GetData().Rows[j].Field<string>("Date"), priceovertimeTableAdapter.GetData().Rows[j].Field<double>("AVGPrice"));
                                 chart1.Series["MIN"].Points.AddXY(priceovertimeTableAdapter.GetData().Rows[j].Field<string>("Date"), priceovertimeTableAdapter.GetData().Rows[j].Field<double>("MINPrice"));
                                 chart1.Series["MAX"].Points.AddXY(priceovertimeTableAdapter.GetData().Rows[j].Field<string>("Date"), priceovertimeTableAdapter.GetData().Rows[j].Field<double>("MAXPrice"));
+                                datelist.Add(priceovertimeTableAdapter.GetData().Rows[j].Field<string>("Date"));
+                                avglist.Add(priceovertimeTableAdapter.GetData().Rows[j].Field<double>("AVGPrice"));
+                                minlist.Add(priceovertimeTableAdapter.GetData().Rows[j].Field<double>("MINPrice"));
+                                maxlist.Add(priceovertimeTableAdapter.GetData().Rows[j].Field<double>("MAXPrice"));
                             }
                         }
                         return;
@@ -201,6 +210,10 @@ namespace EbayPreisBot
                         chart1.Series["AVG"].Points.AddXY(priceovertimeTableAdapter.GetData().Rows[i].Field<string>("Date"), priceovertimeTableAdapter.GetData().Rows[i].Field<double>("AVGPrice"));
                         chart1.Series["MIN"].Points.AddXY(priceovertimeTableAdapter.GetData().Rows[i].Field<string>("Date"), priceovertimeTableAdapter.GetData().Rows[i].Field<double>("MINPrice"));
                         chart1.Series["MAX"].Points.AddXY(priceovertimeTableAdapter.GetData().Rows[i].Field<string>("Date"), priceovertimeTableAdapter.GetData().Rows[i].Field<double>("MAXPrice"));
+                        datelist.Add(priceovertimeTableAdapter.GetData().Rows[i].Field<string>("Date"));
+                        avglist.Add(priceovertimeTableAdapter.GetData().Rows[i].Field<double>("AVGPrice"));
+                        minlist.Add(priceovertimeTableAdapter.GetData().Rows[i].Field<double>("MINPrice"));
+                        maxlist.Add(priceovertimeTableAdapter.GetData().Rows[i].Field<double>("MAXPrice"));
                     }
                 }
             }
@@ -284,8 +297,8 @@ namespace EbayPreisBot
 
         private void chart1_Click(object sender, EventArgs e)
         {
-            //Form_graph_large graphfrom = new Form_graph_large(chart1);
-            //graphfrom.Show();
+            Form3 form = new Form3(preisbekommen.search,avglist,minlist,maxlist,datelist);
+            form.Show();
         }
 
         

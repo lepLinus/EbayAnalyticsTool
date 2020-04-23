@@ -45,7 +45,7 @@
             // 
             // userIDinput
             // 
-            this.userIDinput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            this.userIDinput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(12)))), ((int)(((byte)(19)))));
             this.userIDinput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userIDinput.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userIDinput.ForeColor = System.Drawing.Color.White;
@@ -61,7 +61,7 @@
             // 
             // keyInput
             // 
-            this.keyInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            this.keyInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(12)))), ((int)(((byte)(19)))));
             this.keyInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.keyInput.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.keyInput.ForeColor = System.Drawing.Color.White;
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(12)))), ((int)(((byte)(19)))));
             this.ClientSize = new System.Drawing.Size(418, 500);
             this.Controls.Add(this.savekeycheck);
             this.Controls.Add(this.panel2);

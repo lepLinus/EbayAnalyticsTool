@@ -154,7 +154,7 @@
             // 
             // listBox1
             // 
-            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(12)))), ((int)(((byte)(19)))));
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBox1.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.ForeColor = System.Drawing.Color.White;
@@ -169,7 +169,7 @@
             // 
             // chart1
             // 
-            this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(12)))), ((int)(((byte)(19)))));
             this.chart1.BackSecondaryColor = System.Drawing.Color.White;
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.White;
             this.chart1.BorderSkin.BorderColor = System.Drawing.Color.White;
@@ -192,12 +192,12 @@
             chartArea1.AxisY.MinorTickMark.LineColor = System.Drawing.Color.White;
             chartArea1.AxisY2.LineColor = System.Drawing.Color.White;
             chartArea1.AxisY2.MajorGrid.LineColor = System.Drawing.Color.White;
-            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            chartArea1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(12)))), ((int)(((byte)(19)))));
             chartArea1.BackImageTransparentColor = System.Drawing.Color.Transparent;
             chartArea1.BorderColor = System.Drawing.Color.White;
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
-            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            legend1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(12)))), ((int)(((byte)(19)))));
             legend1.ForeColor = System.Drawing.Color.White;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
@@ -232,7 +232,7 @@
             // 
             // priceSearch
             // 
-            this.priceSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            this.priceSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(12)))), ((int)(((byte)(19)))));
             this.priceSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.priceSearch.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.priceSearch.ForeColor = System.Drawing.Color.White;
@@ -354,7 +354,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(12)))), ((int)(((byte)(19)))));
             this.ClientSize = new System.Drawing.Size(1216, 689);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.search);
