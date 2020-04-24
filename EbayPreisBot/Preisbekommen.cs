@@ -25,6 +25,8 @@ namespace EbayPreisBot
         public IList<IWebElement> linklist;
         public bool end;
 
+        //Ebay-EbayKleinanzeigen
+        public string platform;
         //Driver
         public ChromeDriver cDriver;
         public FirefoxDriver fDriver;

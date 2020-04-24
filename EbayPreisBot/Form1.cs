@@ -72,6 +72,9 @@ namespace EbayPreisBot
             comboBox1.Items.Add(Preisbekommen.driverAvailable.Google_Chrome);
             comboBox1.Items.Add(Preisbekommen.driverAvailable.Mozilla_Firefox);
             comboBox1.SelectedIndex = 0;
+            comboBoxplatform.Items.Add("Ebay");
+            comboBoxplatform.Items.Add("EbayKleinanzeigen");
+            comboBoxplatform.SelectedIndex = 0;
 
             sum.Text = "N/A";
             avg.Text = "N/A";
@@ -115,6 +118,10 @@ namespace EbayPreisBot
             chart1.Series["AVG"].Points.Clear();
             chart1.Series["MAX"].Points.Clear();
             chart1.Series["MIN"].Points.Clear();
+            datelist.Clear();
+            avglist.Clear();
+            minlist.Clear();
+            maxlist.Clear();
             priceSearch.Enabled = false;
             listBox1.Items.Clear();
             priceSearch.Text = null;
@@ -301,6 +308,10 @@ namespace EbayPreisBot
             form.Show();
         }
 
-        
+        private void comboBoxplatform_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            preisbekommen.platform = comboBoxplatform.SelectedItem.ToString();
+            Console.WriteLine(preisbekommen.platform);
+        }
     }
 }

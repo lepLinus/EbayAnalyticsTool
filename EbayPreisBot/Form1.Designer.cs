@@ -56,6 +56,7 @@
             this.priceovertimeTableAdapter = new EbayPreisBot.k117886_ebayscoutDataSetTableAdapters.priceovertimeTableAdapter();
             this.esCuserTableAdapter1 = new EbayPreisBot.k117886_ebayscoutDataSetTableAdapters.ESCuserTableAdapter();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.comboBoxplatform = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceovertimeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.k117886_ebayscoutDataSet)).BeginInit();
@@ -322,7 +323,7 @@
             this.search.Margin = new System.Windows.Forms.Padding(0);
             this.search.MaxDropDownItems = 3;
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(818, 29);
+            this.search.Size = new System.Drawing.Size(630, 29);
             this.search.TabIndex = 17;
             this.search.Text = "Search";
             this.search.SelectedIndexChanged += new System.EventHandler(this.search_SelectedIndexChanged);
@@ -350,12 +351,27 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(568, 5);
             this.flowLayoutPanel1.TabIndex = 18;
             // 
+            // comboBoxplatform
+            // 
+            this.comboBoxplatform.BackColor = System.Drawing.Color.White;
+            this.comboBoxplatform.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxplatform.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxplatform.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(44)))), ((int)(((byte)(84)))));
+            this.comboBoxplatform.FormattingEnabled = true;
+            this.comboBoxplatform.Location = new System.Drawing.Point(663, 598);
+            this.comboBoxplatform.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBoxplatform.Name = "comboBoxplatform";
+            this.comboBoxplatform.Size = new System.Drawing.Size(184, 29);
+            this.comboBoxplatform.TabIndex = 19;
+            this.comboBoxplatform.SelectedIndexChanged += new System.EventHandler(this.comboBoxplatform_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(12)))), ((int)(((byte)(19)))));
             this.ClientSize = new System.Drawing.Size(1216, 689);
+            this.Controls.Add(this.comboBoxplatform);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.search);
             this.Controls.Add(this.maxtxt);
@@ -414,6 +430,7 @@
         protected k117886_ebayscoutDataSetTableAdapters.priceovertimeTableAdapter priceovertimeTableAdapter;
         private k117886_ebayscoutDataSetTableAdapters.ESCuserTableAdapter esCuserTableAdapter1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.ComboBox comboBoxplatform;
     }
 }
 
