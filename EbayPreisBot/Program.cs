@@ -22,7 +22,7 @@ namespace EbayPreisBot
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            /*
             WebClient webclient = new WebClient();
 
             if (webclient.DownloadString("https://www.getyourgame.de/").Contains("Update.zip"))
@@ -54,6 +54,9 @@ namespace EbayPreisBot
                 Application.Run(new Form2());
                 return;
             }
+            */
+
+            Application.Run(new Form2());
         }
     }
 }
