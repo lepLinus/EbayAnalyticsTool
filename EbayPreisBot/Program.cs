@@ -23,12 +23,13 @@ namespace EbayPreisBot
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            /*
+            
             WebClient webclient = new WebClient();
-
-            if (webclient.DownloadString("https://www.getyourgame.de/").Contains("Update.zip"))
+            string Versionnum = Application.ProductVersion;
+            Versionnum = Versionnum.Replace(".", null);
+            if (Convert.ToInt32(webclient.DownloadString("https://www.getyourgame.de/Version")) > Convert.ToInt32(Versionnum) && webclient.DownloadString("https://www.getyourgame.de").Contains("Update.zip"))
             {
-                if (MessageBox.Show("Update.zip found online, would you like to download it?", "eBay-Scouter Updater", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Newer Version found online, would you like to download it?", "eBay-Scouter Updater", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     webclient.DownloadFile("https://www.getyourgame.de/Update.zip", "Update.zip");
                     if (System.IO.File.Exists(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip"))
@@ -36,6 +37,7 @@ namespace EbayPreisBot
                         System.IO.File.Delete(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip");
                     }
                     System.IO.File.Move(Application.StartupPath + "/Update.zip", Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip");
+                    
                     ZipFile.ExtractToDirectory(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip", Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/ESC-Update");
                     Process.Start(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/ESC-Update");
                     if (System.IO.File.Exists(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip"))
@@ -55,7 +57,7 @@ namespace EbayPreisBot
                 Application.Run(new Form2());
                 return;
             }
-            */
+            
 
             Application.Run(new Form2());
         }

@@ -21,8 +21,15 @@ namespace EbayPreisBot
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            esCuserTableAdapter1.Fill(k117886_ebayscoutDataSet1.ESCuser);
-
+            try
+            {
+                esCuserTableAdapter1.Fill(k117886_ebayscoutDataSet1.ESCuser);
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show("Connection to server lost", "eBay-Scouter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
             userIDinput.Text = null;
             keyInput.Text = null;
             correctID = -1;

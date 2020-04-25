@@ -2,27 +2,27 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EbayPreisBot.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="k117886_ebayscoutConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;User Id = k117886_admin; Password = !WASSer://;Host=91.204.46.25;Database=k117886_ebayscout;Persist Security Info=False&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;Devart.Data.MySql&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">User Id = k117886_admin; Password = !WASSer://;Host=91.204.46.25;Database=k117886_ebayscout;Persist Security Info=False</Value>
-    </Setting>
     <Setting Name="UserID" Roaming="true" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">-1</Value>
     </Setting>
     <Setting Name="Key" Roaming="true" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="k117886_ebayscoutConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id = k117886_admin; Password = !WASSer://;Host=91.204.46.26;Database=k117886_ebayscout;Persist Security Info=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;Devart.Data.MySql&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id = k117886_admin; Password = !WASSer://;Host=91.204.46.26;Database=k117886_ebayscout;Persist Security Info=True</Value>
+    </Setting>
     <Setting Name="k117886_ebayscoutConnectionString1" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;User Id = k117886_admin; Password = !WASSer://;Host=91.204.46.25;Database=k117886_ebayscout;Persist Security Info=False&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;User Id = k117886_admin; Password = !WASSer://;Host=91.204.46.26;Database=k117886_ebayscout;Persist Security Info=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;Devart.Data.MySql&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">User Id = k117886_admin; Password = !WASSer://;Host=91.204.46.25;Database=k117886_ebayscout;Persist Security Info=False</Value>
+      <Value Profile="(Default)">User Id = k117886_admin; Password = !WASSer://;Host=91.204.46.26;Database=k117886_ebayscout;Persist Security Info=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>
