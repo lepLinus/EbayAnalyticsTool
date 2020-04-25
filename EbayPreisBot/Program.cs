@@ -23,7 +23,6 @@ namespace EbayPreisBot
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            
             WebClient webclient = new WebClient();
             string Versionnum = Application.ProductVersion;
             Versionnum = Versionnum.Replace(".", null);
