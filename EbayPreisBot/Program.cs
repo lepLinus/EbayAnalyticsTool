@@ -22,6 +22,7 @@ namespace EbayPreisBot
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            
             /*
             WebClient webclient = new WebClient();
 

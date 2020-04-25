@@ -202,7 +202,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="EbayPreisBot_TemporaryKey.pfx" />
+    <None Include="EbayPreisBot_TemporaryKey.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="k117886_ebayscoutDataSet.xsc">
       <DependentUpon>k117886_ebayscoutDataSet.xsd</DependentUpon>
     </None>

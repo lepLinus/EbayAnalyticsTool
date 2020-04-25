@@ -26,22 +26,11 @@ namespace EbayPreisBot.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("User Id=k117886_admin;Password=!WASSer://;Host=91.204.46.25;Database=k117886_ebay" +
-            "scout;Persist Security Info=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("User Id = k117886_admin; Password = !WASSer://;Host=91.204.46.25;Database=k117886" +
+            "_ebayscout;Persist Security Info=False")]
         public string k117886_ebayscoutConnectionString {
             get {
                 return ((string)(this["k117886_ebayscoutConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("User Id=k117886_admin;Password=!WASSer://;Host=91.204.46.26;Database=k117886_ebay" +
-            "scout;Persist Security Info=True")]
-        public string k117886_ebayscoutConnectionString1 {
-            get {
-                return ((string)(this["k117886_ebayscoutConnectionString1"]));
             }
         }
         
@@ -68,6 +57,17 @@ namespace EbayPreisBot.Properties {
             }
             set {
                 this["Key"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("User Id = k117886_admin; Password = !WASSer://;Host=91.204.46.25;Database=k117886" +
+            "_ebayscout;Persist Security Info=False")]
+        public string k117886_ebayscoutConnectionString1 {
+            get {
+                return ((string)(this["k117886_ebayscoutConnectionString1"]));
             }
         }
     }
