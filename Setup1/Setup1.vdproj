@@ -4,9 +4,9 @@
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
 "ProjectName" = "8:ESC-Setup"
-"LanguageId" = "3:1031"
+"LanguageId" = "3:1033"
 "CodePage" = "3:1252"
-"UILanguageId" = "3:1031"
+"UILanguageId" = "3:1033"
 "SccProjectName" = "8:"
 "SccLocalPath" = "8:"
 "SccAuxPath" = "8:"
@@ -569,6 +569,12 @@
         {
         "MsmKey" = "8:_6225034D91BE424D92486B81C70F832F"
         "OwnerKey" = "8:_591AEC81663B40E48F35E17338437995"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_62A67FCA027D479CA47A12B7386DF9CF"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3799,6 +3805,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_62A67FCA027D479CA47A12B7386DF9CF"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Desktop\\Firma\\EbayScouter\\License.rtf"
+            "TargetName" = "8:License.rtf"
+            "Tag" = "8:"
+            "Folder" = "8:_DDB8C3A2721742BA8212145E2DC7D177"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_655991F8D00B12C9AEA5AFF53D2943E0"
             {
             "AssemblyRegister" = "3:1"
@@ -6461,7 +6487,7 @@
         }
         "MsiBootstrapper"
         {
-        "LangId" = "3:1031"
+        "LangId" = "3:1033"
         "RequiresElevation" = "11:FALSE"
         }
         "Product"
@@ -6469,7 +6495,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Ebay Scouter"
         "ProductCode" = "8:{7F1D7BC2-6408-442F-9D98-D769A0116FC5}"
-        "PackageCode" = "8:{0342DACD-AB9D-4AD6-A8C6-8BE0FA82F980}"
+        "PackageCode" = "8:{CDFBBC9F-CCCD-4C6B-973D-776AACB64D02}"
         "UpgradeCode" = "8:{D35160D8-4855-4FFA-8CD3-D2F18FD5ACED}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -6731,7 +6757,8 @@
                             "Type" = "3:6"
                             "ContextData" = "8:"
                             "Attributes" = "3:0"
-                            "Setting" = "3:0"
+                            "Setting" = "3:2"
+                            "Value" = "8:_62A67FCA027D479CA47A12B7386DF9CF"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "Sunken"
@@ -6743,7 +6770,7 @@
                             "ContextData" = "8:4;True=4;False=0"
                             "Attributes" = "3:0"
                             "Setting" = "3:0"
-                            "Value" = "3:4"
+                            "Value" = "3:0"
                             "DefaultValue" = "3:4"
                             "UsePlugInResources" = "11:TRUE"
                             }
