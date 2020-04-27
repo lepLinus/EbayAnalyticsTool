@@ -1,7 +1,9 @@
-﻿using System;
+﻿using EbayPreisBot.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,6 +23,10 @@ namespace EbayPreisBot
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            if (Debugger.IsAttached)
+            {
+                Settings.Default.Reset();
+            }
             try
             {
                 esCuserTableAdapter1.Fill(k117886_ebayscoutDataSet1.ESCuser);
@@ -39,11 +45,11 @@ namespace EbayPreisBot
         {
             try
             {
-                if (Properties.Settings.Default.UserID > -1)
+                if (Settings.Default.UserID > -1)
                 {
-                    userIDinput.Text = Properties.Settings.Default.UserID.ToString();
-                    keyInput.Text = Properties.Settings.Default.Key;
-                    correctID = Properties.Settings.Default.UserID;
+                    userIDinput.Text = Settings.Default.UserID.ToString();
+                    keyInput.Text = Settings.Default.Key;
+                    correctID = Settings.Default.UserID;
                     Login();
                 }
             }
@@ -90,11 +96,11 @@ namespace EbayPreisBot
             Form1 form = new Form1(correctID, keyInput.Text);
             form.Show();
             this.Hide();
-            if (savekeycheck.Checked)
+            if (savekeycheck.Checked && esCuserTableAdapter1.GetData().Rows[correctID].Field<Int16>("Isused") == 0)
             {
-                Properties.Settings.Default.UserID = correctID;
-                Properties.Settings.Default.Key = keyInput.Text;
-                Properties.Settings.Default.Save();
+                Settings.Default.UserID = correctID;
+                Settings.Default.Key = keyInput.Text;
+                Settings.Default.Save();
             }
         }
 
