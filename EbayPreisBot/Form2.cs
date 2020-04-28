@@ -85,18 +85,25 @@ namespace EbayPreisBot
                 MessageBox.Show("User already logged in.", "eBay-Scouter", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
             //Login
             Login();
         }
 
         public void Login()
         {
-            esCuserTableAdapter1.Update(correctID, keyInput.Text, 1, correctID, keyInput.Text, 0);
-            Form1 form = new Form1(correctID, keyInput.Text);
-            form.Show();
-            this.Hide();
-            if (savekeycheck.Checked && esCuserTableAdapter1.GetData().Rows[correctID].Field<Int16>("Isused") == 0)
+            if (esCuserTableAdapter1.GetData().Rows[correctID].Field<Int16>("Isused") == 0)
+            {
+                esCuserTableAdapter1.Update(correctID, keyInput.Text, 1, correctID, keyInput.Text, 0);
+                Form1 form = new Form1(correctID, keyInput.Text);
+                form.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("User already logged in.", "eBay-Scouter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (savekeycheck.Checked)
             {
                 Settings.Default.UserID = correctID;
                 Settings.Default.Key = keyInput.Text;
