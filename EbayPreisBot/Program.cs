@@ -28,7 +28,7 @@ namespace EbayPreisBot
             Versionnum = Versionnum.Replace(".", null);
             try
             {
-                if (Convert.ToInt32(webclient.DownloadString("https://www.getyourgame.de/Version")) > Convert.ToInt32(Versionnum) && webclient.DownloadString("https://www.getyourgame.de").Contains("Update.zip"))
+                if (Convert.ToInt32(webclient.DownloadString("https://www.getyourgame.de/Version")) >= Convert.ToInt32(Versionnum) && webclient.DownloadString("https://www.getyourgame.de").Contains("Update.zip"))
                 {
                     if (MessageBox.Show("Newer Version found online, would you like to download it?", "eBay-Scouter Updater", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
