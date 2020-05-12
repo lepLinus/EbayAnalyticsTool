@@ -39,20 +39,29 @@ namespace EbayPreisBot
 
                     System.IO.DirectoryInfo di = new DirectoryInfo(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/ESC-Update");
 
-                    foreach (FileInfo file in di.GetFiles())
+                    if (di.Exists)
                     {
-                        file.Delete();
+                        foreach (FileInfo file in di.GetFiles())
+                        {
+                            file.Delete();
+                        }
+                        foreach (DirectoryInfo dir in di.GetDirectories())
+                        {
+                            dir.Delete(true);
+                        }
                     }
-                    foreach (DirectoryInfo dir in di.GetDirectories())
+                    else
                     {
-                        dir.Delete(true);
+                        System.IO.Directory.CreateDirectory(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/ESC-Update");
                     }
+
                     ZipFile.ExtractToDirectory(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip", Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/ESC-Update");
                     Process.Start(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/ESC-Update");
                     if (System.IO.File.Exists(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip"))
                     {
                         System.IO.File.Delete(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip");
                     }
+
                     Application.Exit();
                 }
                 else
