@@ -9,12 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Management;
 
 namespace EbayPreisBot
 { 
     public partial class Form2 : Form
     {
         int correctID = -1;
+        
 
         public Form2()
         {
@@ -39,6 +41,11 @@ namespace EbayPreisBot
             userIDinput.Text = null;
             keyInput.Text = null;
             correctID = -1;
+            if (Settings.Default.Isuesd == "null")
+            {
+                Guid g = Guid.NewGuid();
+                Settings.Default.Isuesd = g.ToString();
+            }
         }
 
         private void Form2_Shown(object sender, EventArgs e)
@@ -79,8 +86,10 @@ namespace EbayPreisBot
                 MessageBox.Show("Key not found.", "eBay-Scouter", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            if (esCuserTableAdapter1.GetData().Rows[correctID].Field<Int16>("Isused") == 1)
+            Console.WriteLine(Settings.Default.Isuesd);
+            Console.WriteLine(esCuserTableAdapter1.GetData().Rows[correctID].Field<string>("Isused"));
+            Console.WriteLine(0.ToString());
+            if (esCuserTableAdapter1.GetData().Rows[correctID].Field<string>("Isused") != Settings.Default.Isuesd && !esCuserTableAdapter1.GetData().Rows[correctID].Field<string>("Isused").Equals("0"))
             {
                 MessageBox.Show("User already logged in.", "eBay-Scouter", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -91,9 +100,8 @@ namespace EbayPreisBot
 
         public void Login()
         {
-            if (esCuserTableAdapter1.GetData().Rows[correctID].Field<Int16>("Isused") == 0)
+            if (esCuserTableAdapter1.GetData().Rows[correctID].Field<string>("Isused") == Settings.Default.Isuesd || esCuserTableAdapter1.GetData().Rows[correctID].Field<string>("Isused").Equals("0"))
             {
-                esCuserTableAdapter1.Update(correctID, keyInput.Text, 1, correctID, keyInput.Text, 0);
                 Form1 form = new Form1(correctID, keyInput.Text);
                 form.Show();
                 this.Hide();
@@ -108,6 +116,7 @@ namespace EbayPreisBot
                 Settings.Default.UserID = correctID;
                 Settings.Default.Key = keyInput.Text;
                 Settings.Default.Save();
+                esCuserTableAdapter1.Update(correctID, keyInput.Text, Settings.Default.Isuesd, correctID, keyInput.Text, "0");
             }
         }
 

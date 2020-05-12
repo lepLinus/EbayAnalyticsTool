@@ -26,34 +26,42 @@ namespace EbayPreisBot
             WebClient webclient = new WebClient();
             string Versionnum = Application.ProductVersion;
             Versionnum = Versionnum.Replace(".", null);
-            if (Convert.ToInt32(webclient.DownloadString("https://www.getyourgame.de/Version")) > Convert.ToInt32(Versionnum) && webclient.DownloadString("https://www.getyourgame.de").Contains("Update.zip"))
+            try
             {
-                if (MessageBox.Show("Newer Version found online, would you like to download it?", "eBay-Scouter Updater", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (Convert.ToInt32(webclient.DownloadString("https://www.getyourgame.de/Version")) > Convert.ToInt32(Versionnum) && webclient.DownloadString("https://www.getyourgame.de").Contains("Update.zip"))
                 {
-                    webclient.DownloadFile("https://www.getyourgame.de/Update.zip", "Update.zip");
-                    if (System.IO.File.Exists(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip"))
+                    if (MessageBox.Show("Newer Version found online, would you like to download it?", "eBay-Scouter Updater", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        System.IO.File.Delete(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip");
-                    }
-                    System.IO.File.Move(Application.StartupPath + "/Update.zip", Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip");
+                        webclient.DownloadFile("https://www.getyourgame.de/Update.zip", "Update.zip");
+                        if (System.IO.File.Exists(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip"))
+                        {
+                            System.IO.File.Delete(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip");
+                        }
+                        System.IO.File.Move(Application.StartupPath + "/Update.zip", Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip");
 
-                    System.IO.DirectoryInfo di = new DirectoryInfo(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/ESC-Update");
+                        System.IO.DirectoryInfo di = new DirectoryInfo(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/ESC-Update");
 
-                    foreach (FileInfo file in di.GetFiles())
-                    {
-                        file.Delete();
+                        foreach (FileInfo file in di.GetFiles())
+                        {
+                            file.Delete();
+                        }
+                        foreach (DirectoryInfo dir in di.GetDirectories())
+                        {
+                            dir.Delete(true);
+                        }
+                        ZipFile.ExtractToDirectory(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip", Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/ESC-Update");
+                        Process.Start(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/ESC-Update");
+                        if (System.IO.File.Exists(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip"))
+                        {
+                            System.IO.File.Delete(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip");
+                        }
+                        Application.Exit();
                     }
-                    foreach (DirectoryInfo dir in di.GetDirectories())
+                    else
                     {
-                        dir.Delete(true);
+                        Application.Run(new Form2());
+                        return;
                     }
-                    ZipFile.ExtractToDirectory(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip", Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/ESC-Update");
-                    Process.Start(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/ESC-Update");
-                    if (System.IO.File.Exists(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip"))
-                    {
-                        System.IO.File.Delete(Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders", "{374DE290-123F-4565-9164-39C4925E467B}", String.Empty).ToString() + "/Update.zip");
-                    }
-                    Application.Exit();
                 }
                 else
                 {
@@ -61,12 +69,10 @@ namespace EbayPreisBot
                     return;
                 }
             }
-            else
+            catch (Exception E)
             {
-                Application.Run(new Form2());
-                return;
+                MessageBox.Show("Connection timed out. No connetion to Web", "eBay-Scouter", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
 
             Application.Run(new Form2());
         }

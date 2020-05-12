@@ -70,5 +70,17 @@ namespace EbayPreisBot.Properties {
                 return ((string)(this["k117886_ebayscoutConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("null")]
+        public string Isuesd {
+            get {
+                return ((string)(this["Isuesd"]));
+            }
+            set {
+                this["Isuesd"] = value;
+            }
+        }
     }
 }

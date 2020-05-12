@@ -145,7 +145,7 @@
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
               <xs:element name="Key" msprop:Generator_ColumnVarNameInTable="columnKey" msprop:Generator_ColumnPropNameInRow="Key" msprop:Generator_ColumnPropNameInTable="KeyColumn" msprop:Generator_UserColumnName="Key" type="xs:string" />
-              <xs:element name="Isused" msprop:Generator_ColumnVarNameInTable="columnIsused" msprop:Generator_ColumnPropNameInRow="Isused" msprop:Generator_ColumnPropNameInTable="IsusedColumn" msprop:Generator_UserColumnName="Isused" type="xs:short" />
+              <xs:element name="Isused" msprop:Generator_ColumnVarNameInTable="columnIsused" msprop:Generator_ColumnPropNameInRow="Isused" msprop:Generator_ColumnPropNameInTable="IsusedColumn" msprop:Generator_UserColumnName="Isused" type="xs:string" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
