@@ -51,9 +51,16 @@ namespace EbayPreisBot
                     //Chrome Options
                     ChromeOptions optionsChrome = new ChromeOptions();
                     optionsChrome.AddArgument("--window-size=400,400");
+                    //optionsChrome.AddArgument("--headless");
+                    optionsChrome.AddArgument("no-sandbox");
+                    optionsChrome.AddArgument("--disable-setuid-sandbox");
+
+                    var cdds = ChromeDriverService.CreateDefaultService();
+                    cdds.HideCommandPromptWindow = true;
+
 
                     //Chrome Driver Setup
-                    cDriver = new ChromeDriver(Directory.GetCurrentDirectory(), optionsChrome);
+                    cDriver = new ChromeDriver(cdds, optionsChrome);
                     cDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
                     cDriver.Url = "https://www.ebay.de/";
                     cDriver.FindElement(By.Name("_nkw")).SendKeys(search);
@@ -103,9 +110,11 @@ namespace EbayPreisBot
                     FirefoxOptions optionsFirefox = new FirefoxOptions();
                     optionsFirefox.AddArguments("--window-size=400,400");
                     optionsFirefox.AddArgument("--headless");
+                    var ffds = FirefoxDriverService.CreateDefaultService();
+                    ffds.HideCommandPromptWindow = true;
 
                     //Firefox Drivers
-                    fDriver = new FirefoxDriver(Directory.GetCurrentDirectory(), optionsFirefox);
+                    fDriver = new FirefoxDriver(ffds, optionsFirefox);
                     fDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
                     fDriver.Url = "https://www.ebay.de/";
                     fDriver.FindElement(By.Name("_nkw")).SendKeys(search);

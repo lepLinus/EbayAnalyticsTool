@@ -24,5 +24,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">User Id = k117886_admin; Password = !WASSer://;Host=91.204.46.26;Database=k117886_ebayscout;Persist Security Info=True</Value>
     </Setting>
+    <Setting Name="Isuesd" Type="System.String" Scope="User">
+      <Value Profile="(Default)">null</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
