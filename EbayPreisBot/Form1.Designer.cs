@@ -57,6 +57,7 @@
             this.esCuserTableAdapter1 = new EbayPreisBot.k117886_ebayscoutDataSetTableAdapters.ESCuserTableAdapter();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.comboBoxplatform = new System.Windows.Forms.ComboBox();
+            this.searchstate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceovertimeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.k117886_ebayscoutDataSet)).BeginInit();
@@ -80,10 +81,10 @@
             this.Run.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Run.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Run.ForeColor = System.Drawing.Color.White;
-            this.Run.Location = new System.Drawing.Point(1051, 594);
+            this.Run.Location = new System.Drawing.Point(1051, 598);
             this.Run.Margin = new System.Windows.Forms.Padding(0);
             this.Run.Name = "Run";
-            this.Run.Size = new System.Drawing.Size(129, 39);
+            this.Run.Size = new System.Drawing.Size(129, 35);
             this.Run.TabIndex = 1;
             this.Run.Text = "Run";
             this.Run.UseVisualStyleBackColor = false;
@@ -365,12 +366,25 @@
             this.comboBoxplatform.TabIndex = 19;
             this.comboBoxplatform.SelectedIndexChanged += new System.EventHandler(this.comboBoxplatform_SelectedIndexChanged);
             // 
+            // searchstate
+            // 
+            this.searchstate.BackColor = System.Drawing.Color.Transparent;
+            this.searchstate.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchstate.ForeColor = System.Drawing.Color.White;
+            this.searchstate.Location = new System.Drawing.Point(18, 633);
+            this.searchstate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.searchstate.Name = "searchstate";
+            this.searchstate.Size = new System.Drawing.Size(1162, 25);
+            this.searchstate.TabIndex = 20;
+            this.searchstate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(12)))), ((int)(((byte)(19)))));
             this.ClientSize = new System.Drawing.Size(1216, 689);
+            this.Controls.Add(this.searchstate);
             this.Controls.Add(this.comboBoxplatform);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.search);
@@ -431,6 +445,7 @@
         private k117886_ebayscoutDataSetTableAdapters.ESCuserTableAdapter esCuserTableAdapter1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ComboBox comboBoxplatform;
+        public System.Windows.Forms.Label searchstate;
     }
 }
 

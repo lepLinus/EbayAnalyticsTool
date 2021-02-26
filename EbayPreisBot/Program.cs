@@ -68,13 +68,13 @@ namespace EbayPreisBot
                     }
                     else
                     {
-                        Application.Run(new Form2());
+                        Application.Run(new Form1(0,""));
                         return;
                     }
                 }
                 else
                 {
-                    Application.Run(new Form2());
+                    Application.Run(new Form1(0,""));
                     return;
                 }
             }
@@ -83,7 +83,7 @@ namespace EbayPreisBot
                 MessageBox.Show("Connection timed out. No connetion to Web", "eBay-Scouter", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            Application.Run(new Form2());
+            Application.Run(new Form1(0,""));
         }
     }
 }

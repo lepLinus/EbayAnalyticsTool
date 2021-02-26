@@ -27,7 +27,8 @@ namespace EbayPreisBot
         public Form1(int id, string key)
         {
             InitializeComponent();
-            search.DataSource = priceovertimeTableAdapter.GetData();
+            search.DataSource = priceovertimeTableAdapter.GetData().Select(item => item.SearchString).Distinct().ToList();
+            
             search.DisplayMember = "SearchString";
             search.AutoCompleteMode = AutoCompleteMode.Suggest;
             search.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -128,12 +129,16 @@ namespace EbayPreisBot
             progressBar1.Maximum = 2;
             progressBar1.Step = 1;
             preisbekommen.search = preisbekommen.search.ToLower();
-            try{
+            searchstate.Text = "Searching...";
+            try
+            {
                 preisbekommen.Test(this);
+                searchstate.Text = "Search ready";
             }
-            catch (Exception)
+            catch (Exception E)
             {
                 MessageBox.Show("Error starting search. Please restart the search.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                searchstate.Text = "Error on starting search: " + E;
                 TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Error);
                 TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Normal);
                 progressBar1.Value = 0;
@@ -147,13 +152,14 @@ namespace EbayPreisBot
             max.Text = "N/A";
 
             //Show result data
+            Console.WriteLine("Show Data");
             sum.Text = preisbekommen.prices.Count.ToString();
             avg.Text = (preisbekommen.sum / preisbekommen.prices.Count).ToString("0.00") + "€";
             min.Text = preisbekommen.min.ToString("0.00") + "€";
             max.Text = preisbekommen.max.ToString("0.00") + "€";
 
             priceSearch.Enabled = true;
-
+            Console.WriteLine("Show links");
             for (int i = 0; i < preisbekommen.prices.Count; i++)
             {
                 listBox1.Items.Add(preisbekommen.prices[i].ToString() + "€");
@@ -161,46 +167,62 @@ namespace EbayPreisBot
                 {
                     listBox1.Items.Add(preisbekommen.links[i].ToString());
                 }
-                catch (Exception) { }
+                catch (Exception E) {
+                    searchstate.Text = "Error adding links: " + E;
+                }
             }
-
+            
             this.WindowState = FormWindowState.Minimized;
             this.Show();
             this.WindowState = FormWindowState.Normal;
             System.Media.SystemSounds.Beep.Play();
+            Console.WriteLine("Upload data");
+            //Get Data from database
+            DataTable priceovertimedata = priceovertimeTableAdapter.GetData();
 
-            for (int i = 0; i < priceovertimeTableAdapter.GetData().Rows.Count; i++)
+            //Search database for searchstring
+            for (int i = 0; i < priceovertimedata.Rows.Count; i++)
             {
-                if (priceovertimeTableAdapter.GetData().Rows[i].Field<string>("SearchString") != preisbekommen.search)
+                //Look if data not exists
+                if (priceovertimedata.Rows[i].Field<string>("SearchString") != preisbekommen.search)
                 {
-                    if (i == priceovertimeTableAdapter.GetData().Rows.Count - 1)
+                    //Look if data not exists break because data already added
+                    if (i == priceovertimedata.Rows.Count - 1)
                     {
+                        searchstate.Text = "Data already added to Database";
+                        Console.WriteLine("Data already added to Database");
                         break;
                     }
                 }
                 else
                 {
-                    if (priceovertimeTableAdapter.GetData().Rows[i].Field<string>("Date") == System.DateTime.Now.Date.ToString("dd/MM/yyyy"))
+                    if (priceovertimedata.Rows[i].Field<string>("Date") == DateTime.Now.Date.ToString("dd/MM/yyyy"))
                     {
-                        for (int j = 0; j < priceovertimeTableAdapter.GetData().Rows.Count; j++)
+                        for (int j = 0; j < priceovertimedata.Rows.Count; j++)
                         {
-                            if (priceovertimeTableAdapter.GetData().Rows[j].Field<string>("SearchString") == preisbekommen.search)
+                            if (priceovertimedata.Rows[j].Field<string>("SearchString") == preisbekommen.search)
                             {
-                                chart1.Series["AVG"].Points.AddXY(priceovertimeTableAdapter.GetData().Rows[j].Field<string>("Date"), priceovertimeTableAdapter.GetData().Rows[j].Field<double>("AVGPrice"));
-                                chart1.Series["MIN"].Points.AddXY(priceovertimeTableAdapter.GetData().Rows[j].Field<string>("Date"), priceovertimeTableAdapter.GetData().Rows[j].Field<double>("MINPrice"));
-                                chart1.Series["MAX"].Points.AddXY(priceovertimeTableAdapter.GetData().Rows[j].Field<string>("Date"), priceovertimeTableAdapter.GetData().Rows[j].Field<double>("MAXPrice"));
-                                datelist.Add(priceovertimeTableAdapter.GetData().Rows[j].Field<string>("Date"));
-                                avglist.Add(priceovertimeTableAdapter.GetData().Rows[j].Field<double>("AVGPrice"));
-                                minlist.Add(priceovertimeTableAdapter.GetData().Rows[j].Field<double>("MINPrice"));
-                                maxlist.Add(priceovertimeTableAdapter.GetData().Rows[j].Field<double>("MAXPrice"));
+                                chart1.Series["AVG"].Points.AddXY(priceovertimedata.Rows[j].Field<string>("Date"), priceovertimedata.Rows[j].Field<double>("AVGPrice"));
+                                chart1.Series["MIN"].Points.AddXY(priceovertimedata.Rows[j].Field<string>("Date"), priceovertimedata.Rows[j].Field<double>("MINPrice"));
+                                chart1.Series["MAX"].Points.AddXY(priceovertimedata.Rows[j].Field<string>("Date"), priceovertimedata.Rows[j].Field<double>("MAXPrice"));
+
+                                datelist.Add(priceovertimedata.Rows[j].Field<string>("Date"));
+                                avglist.Add(priceovertimedata.Rows[j].Field<double>("AVGPrice"));
+                                minlist.Add(priceovertimedata.Rows[j].Field<double>("MINPrice"));
+                                maxlist.Add(priceovertimedata.Rows[j].Field<double>("MAXPrice"));
+
+                                searchstate.Text = "Getting data";
+                                Console.WriteLine("Getting data");
                             }
                         }
                         return;
                     }
                     else
                     {
-                        if (i == priceovertimeTableAdapter.GetData().Rows.Count - 1)
+                        if (i == priceovertimedata.Rows.Count - 1)
                         {
+                            searchstate.Text = "Data already added to Database";
+                            Console.WriteLine("Data already added to Database");
                             break;
                         }
                     }
@@ -208,29 +230,41 @@ namespace EbayPreisBot
             }
             try
             {
-                priceovertimeTableAdapter.Insert(priceovertimeTableAdapter.GetData().Rows.Count, System.DateTime.Now.Date.ToString("dd/MM/yyyy"), preisbekommen.search, preisbekommen.sum / preisbekommen.prices.Count, preisbekommen.max, preisbekommen.min);
-                for (int i = 0; i < priceovertimeTableAdapter.GetData().Rows.Count; i++)
+                // Inserte new Data
+                priceovertimeTableAdapter.Insert(priceovertimeTableAdapter.GetData().Rows.Count, DateTime.Now.Date.ToString("dd/MM/yyyy"), preisbekommen.search, preisbekommen.sum / preisbekommen.prices.Count, preisbekommen.max, preisbekommen.min);
+                // Get new database
+                priceovertimedata = priceovertimeTableAdapter.GetData();
+                searchstate.Text = "Uploading Data to Database";
+                Console.WriteLine("Uploading Data to Database");
+
+                for (int i = 0; i < priceovertimedata.Rows.Count; i++)
                 {
-                    if (priceovertimeTableAdapter.GetData().Rows[i].Field<string>("SearchString") == preisbekommen.search)
+                    if (priceovertimedata.Rows[i].Field<string>("SearchString") == preisbekommen.search)
                     {
-                        chart1.Series["AVG"].Points.AddXY(priceovertimeTableAdapter.GetData().Rows[i].Field<string>("Date"), priceovertimeTableAdapter.GetData().Rows[i].Field<double>("AVGPrice"));
-                        chart1.Series["MIN"].Points.AddXY(priceovertimeTableAdapter.GetData().Rows[i].Field<string>("Date"), priceovertimeTableAdapter.GetData().Rows[i].Field<double>("MINPrice"));
-                        chart1.Series["MAX"].Points.AddXY(priceovertimeTableAdapter.GetData().Rows[i].Field<string>("Date"), priceovertimeTableAdapter.GetData().Rows[i].Field<double>("MAXPrice"));
-                        datelist.Add(priceovertimeTableAdapter.GetData().Rows[i].Field<string>("Date"));
-                        avglist.Add(priceovertimeTableAdapter.GetData().Rows[i].Field<double>("AVGPrice"));
-                        minlist.Add(priceovertimeTableAdapter.GetData().Rows[i].Field<double>("MINPrice"));
-                        maxlist.Add(priceovertimeTableAdapter.GetData().Rows[i].Field<double>("MAXPrice"));
+                        chart1.Series["AVG"].Points.AddXY(priceovertimedata.Rows[i].Field<string>("Date"), priceovertimedata.Rows[i].Field<double>("AVGPrice"));
+                        chart1.Series["MIN"].Points.AddXY(priceovertimedata.Rows[i].Field<string>("Date"), priceovertimedata.Rows[i].Field<double>("MINPrice"));
+                        chart1.Series["MAX"].Points.AddXY(priceovertimedata.Rows[i].Field<string>("Date"), priceovertimedata.Rows[i].Field<double>("MAXPrice"));
+
+                        datelist.Add(priceovertimedata.Rows[i].Field<string>("Date"));
+                        avglist.Add(priceovertimedata.Rows[i].Field<double>("AVGPrice"));
+                        minlist.Add(priceovertimedata.Rows[i].Field<double>("MINPrice"));
+                        maxlist.Add(priceovertimedata.Rows[i].Field<double>("MAXPrice"));
+
+                        searchstate.Text = "Getting Data from Database";
+                        Console.WriteLine("Getting Data from Database");
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception E)
             {
                 MessageBox.Show("Error getting Data, no data found. Please restart the search.", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                searchstate.Text = "Error getting Data: " + E;
                 TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Error);
                 TaskbarManager.Instance.SetProgressState(TaskbarProgressBarState.Normal);
                 progressBar1.Value = 0;
                 return;
             }
+            priceovertimedata = null;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

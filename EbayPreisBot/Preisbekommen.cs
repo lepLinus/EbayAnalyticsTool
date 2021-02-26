@@ -135,6 +135,10 @@ namespace EbayPreisBot
                         {
                             IWebElement el = list[i];
                             prices.Add(GetPrizeAsFloat(el.Text));
+                           /* if (i < linklist.Count())
+                            {
+                                links.Add(linklist[i].GetAttribute("href"));
+                            }*/
                             frm.AddProgress(list.Count);
                         }
                         for (int i = 0; i < linklist.Count(); i++)
